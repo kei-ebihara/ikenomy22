@@ -6,7 +6,7 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.string :phone_number, length: 15
       t.string :address, length: 100
       t.text :homepage, length: 1000
-      t.text :business_hours, length: 100
+      t.text :business_hours, length: 200
       t.string :holiday, length: 50
 
       t.timestamps

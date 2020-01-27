@@ -7,7 +7,7 @@ class Shop < ApplicationRecord
   validates :phone_number, length: { maximum: 15 }
   validates :address, length: { maximum: 100 }
   validates :homepage, length: { maximum: 1000 }
-  validates :business_hours, length: { maximum: 100 }
+  validates :business_hours, length: { maximum: 200 }
   validates :holiday, length: { maximum: 50 }
   
   before_save do
