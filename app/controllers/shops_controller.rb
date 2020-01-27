@@ -9,8 +9,15 @@ class ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
-    @shop.save
-    redirect_to @shop, notice: "お店を登録しました。"
+    if @shop.save
+      redirect_to @shop, notice: "お店を登録しました。"
+    else
+      render :new
+    end
+  end
+
+  def show
+    @shop = Shop.find(params[:id])
   end
   
   private

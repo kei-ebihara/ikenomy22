@@ -1,0 +1,25 @@
+<div class="col-md-10 offset-md-1 mt-5">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <% if @shop.image.attached? %>
+        <%= image_tag @shop.image.variant(resize: "300x300"), class: "img-thumbnail" %>
+      <% else %>
+        <%= image_tag "no_image.png", class: "img-thumbnail" %>
+      <% end %>
+    </div>
+
+    <div class="col-md-8">
+      <h2><%= @shop.name %></h2>
+      <ul>
+        <li><b>電話番号: </b><%= @shop.phone_number %></li>
+        <li><b>住所: </b><%= @shop.address %></li>
+        <li><b>ホームページ: </b><%= @shop.homepage %></li>
+        <li><b>営業時間: </b><%= @shop.business_hours %></li>
+        <li><b>定休日: </b><%= @shop.holiday %></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <h4>お店の紹介</h4>
+  <%= simple_format @shop.description %>
+</div>
