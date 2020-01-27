@@ -7,6 +7,7 @@
     <div class="col-md-8">
       <h2><%= @shop.name %></h2>
       <ul>
+        <li><b>カテゴリー: </b><%= @shop.category&.name %></li>
         <li><b>電話番号: </b><%= @shop.phone_number %></li>
         <li><b>住所: </b><%= @shop.address %></li>
         <li><b>ホームページ: </b><%= @shop.homepage %></li>

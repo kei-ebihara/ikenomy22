@@ -1,4 +1,5 @@
 class Shop < ApplicationRecord
+  belongs_to :category
   has_one_attached :image
   attribute :new_image
 
