@@ -1,0 +1,12 @@
+<% @shops.each do |shop| %>
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+    <% if shop.image.attached? %>
+      <%= image_tag shop.image.variant(resize: "300x300"), class: "img-thumbnail" %>
+    <% else %>
+      <%= image_tag "no_image.png", class: "img-thumbnail" %>
+    <% end %>
+    <h4 class="mt-2"><%= link_to shop.name, shop_path(shop) %></h4>
+    <div><%= shop.address %> </div>
+    <p><%= truncate(shop.description, length: 20) %></p>
+  </div>
+<% end %>

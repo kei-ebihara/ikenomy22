@@ -19,6 +19,26 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
   end
+
+  def edit
+    @shop = Shop.find(params[:id])
+  end
+
+  def update
+    @shop = Shop.find(params[:id])
+    if @shop.update(shop_params)
+      redirect_to @shop, notice: "お店を更新しました。"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @shop = Shop.find(params[:id])
+    @shop.destroy
+    redirect_to shops_path, notice: "お店を削除しました。"
+  end
+
   
   private
 
