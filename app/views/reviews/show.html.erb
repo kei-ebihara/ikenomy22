@@ -37,7 +37,7 @@
         <p><%= t(".question_review", review: @review.title) %></p>
       </div>
       <div class="modal-footer">
-        <%= button_tag t(".chancel"), class: "btn btn-secondary", data: { dismiss: "modal"  %>
+        <%= button_tag t(".chancel"), class: "btn btn-secondary", data: { dismiss: "modal"}  %>
         <%= link_to t(".delete_action"), shop_review_path(@shop, @review), method: :delete, class: "btn btn-danger" %>
       </div>
     </div>

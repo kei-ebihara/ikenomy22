@@ -26,6 +26,9 @@
           <%= link_to t(".log_in"), new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
+      <li class="nav-item">
+        <%= link_to t(".users"), users_index_path, class: "nav-link" %>
+      </li>
     </ul>
 
     <%= search_form_for @q, class: "form-inline my-2 my-lg-0" do |f| %>
