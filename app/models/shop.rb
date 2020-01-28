@@ -12,6 +12,9 @@ class Shop < ApplicationRecord
   validates :homepage, length: { maximum: 1000 }
   validates :business_hours, length: { maximum: 200 }
   validates :holiday, length: { maximum: 50 }
+
+  scope :find_newest_shops, -> (p) { page(p).per(4).order(created_at: :desc) }
+  
   
   before_save do
     self.image = new_image if new_image

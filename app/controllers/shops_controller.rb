@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:edit, :update, :destroy]
+  
   def index
-    @shops = Shop.with_attached_image.page(params[:page]).per(4)
   end
 
   def new
