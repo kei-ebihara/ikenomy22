@@ -7,24 +7,24 @@
     <div class="col-md-8">
       <h2><%= @shop.name %></h2>
       <ul>
-        <li><b>カテゴリー: </b><%= @shop.category&.name %></li>
-        <li><b>電話番号: </b><%= @shop.phone_number %></li>
-        <li><b>住所: </b><%= @shop.address %></li>
-        <li><b>ホームページ: </b><%= @shop.homepage %></li>
-        <li><b>営業時間: </b><%= @shop.business_hours %></li>
-        <li><b>定休日: </b><%= @shop.holiday %></li>
+        <li><b><%= t('.category') %>: </b><%= @shop.category&.name %></li>
+        <li></b><%= @shop.phone_number %></li>
+        <li></b><%= @shop.address %></li>
+        <li></b><%= @shop.homepage %></li>
+        <li></b><%= @shop.business_hours %></li>
+        <li></b><%= @shop.holiday %></li>
       </ul>
     </div>
   </div>
   <hr>
-  <h4>お店の紹介</h4>
+  <h4><%= t('.description') %></h4>
   <%= simple_format @shop.description %>
-  <%= link_to "編集", edit_shop_path(@shop), class: "btn btn-primary" %>
-    <%= button_tag "削除", class: "btn btn-warning", data: { toggle: "modal", target: "#delete-shop" } %>
+  <%= link_to t(".edit"), edit_shop_path(@shop), class: "btn btn-primary" %>
+    <%= button_tag t(".delete"), class: "btn btn-warning", data: { toggle: "modal", target: "#delete-shop" } %>
   <% if user_signed_in? %>
     <%= link_to t(".review_new"), new_shop_review_path(@shop), class: "btn btn-info" %>
   <% end %>    
-  <%= link_to "戻る", shops_path, class: "btn btn-secondary" %>
+  <%= link_to t(".return"), shops_path, class: "btn btn-secondary" %>
 </div>
   <hr>
   <%= render partial: "reviews/review", collection: @shop.reviews %>
@@ -33,17 +33,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-name" id="exampleModalLabel">お店削除</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><%= t ".modal_title" %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p><%= @shop.name %>を削除しますか？</p>
+        <p><%= t(".question_shop", shop: @shop.name) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル<button>
-        <%= link_to "削除する", shop_path(@shop), method: :delete, class: "btn btn-danger" %>
+        <%= button_tag t(".chancel"), class: "btn btn-secondary", data: { dismiss: "modal" } %>
+        <%= link_to t(".delete_action"), shop_path(@shop), method: :delete, class: "btn btn-danger" %>
       </div>
     </div>
   </div>
