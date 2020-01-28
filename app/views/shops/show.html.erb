@@ -21,8 +21,13 @@
   <%= simple_format @shop.description %>
   <%= link_to "編集", edit_shop_path(@shop), class: "btn btn-primary" %>
     <%= button_tag "削除", class: "btn btn-warning", data: { toggle: "modal", target: "#delete-shop" } %>
+  <% if user_signed_in? %>
+    <%= link_to t(".review_new"), new_shop_review_path(@shop), class: "btn btn-info" %>
+  <% end %>    
   <%= link_to "戻る", shops_path, class: "btn btn-secondary" %>
 </div>
+  <hr>
+  <%= render partial: "reviews/review", collection: @shop.reviews %>
 
 <div class="modal fade" id="delete-shop">
   <div class="modal-dialog">
