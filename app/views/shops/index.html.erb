@@ -3,6 +3,6 @@
       <%= show_shop_image shop %>
     <h4 class="mt-2"><%= link_to shop.name, shop_path(shop) %></h4>
     <div><%= shop.address %> </div>
-    <p><%= truncate(shop.description, length: 20) %></p>
+    <p><%= truncate(shop.description, length: 50) %></p>
   </div>
 <% end %>

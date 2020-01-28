@@ -1,0 +1,25 @@
+ja:
+  shops:
+    new:
+      title: お店登録
+    form:
+      include_blank: カテゴリーを選択して下さい
+      return: 戻る
+    edit:
+      return: 戻る
+      title: お店更新
+    show:
+      category: カテゴリー
+      phone_number: 電話番号
+      address: 住所
+      homepage: ホームページ
+      business_hours: 営業時間
+      holiday: 定休日
+      description: お店の紹介
+      edit: 編集
+      return: 戻る
+      delete: 削除
+      modal_title: お店削除
+      question_shop: "%{shop}を削除しますか？"
+      delete_action: 削除する
+      chancel: キャンセル
