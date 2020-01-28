@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_shop, only: [:edit, :update, :destroy]
   def index
-    @shops = Shop.page(params[:page]).per(4)
+    @shops = Shop.with_attached_image.page(params[:page]).per(4)
   end
 
   def new
@@ -18,6 +18,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @shop = Shop.with_attached_image.includes(reviews: :user).find(params[:id])
   end
 
   def edit
