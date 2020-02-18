@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      shop: お店
+      user: ユーザー
+    attributes:
+      shop:
+        name: 店名
+        phone_number: 電話番号
+        address: 住所
+        homepage: ホームページ
+        business_hours: 営業時間
+        holiday: 定休日
+        description: 詳細
+        new_image: 画像
+        image: 画像
+        category_id: カテゴリー
+        category: カテゴリー
+      user:
+        email: メールアドレス
+        nick_name: ニックネーム
+        avatar: プロフィール画像
+        password: パスワード
+        current_password: 現在のパスワード
+        remember_me: ログイン情報を記録する
